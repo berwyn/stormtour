@@ -136,8 +136,13 @@ const images: Image[] = [
   },
 ]
 
-export default class IndexPage extends React.Component<{}, {}> {
+interface IndexPageProps {
+  data: any
+}
+
+export default class IndexPage extends React.Component<IndexPageProps, {}> {
   render() {
+    console.log(this.props.data)
     return (
       <div className={rootClass}>
         <img className={logoClass} src={logo} />
@@ -176,3 +181,13 @@ export default class IndexPage extends React.Component<{}, {}> {
     )
   }
 }
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site {
+      siteMetadata {
+        siteName
+      }
+    }
+  }
+`

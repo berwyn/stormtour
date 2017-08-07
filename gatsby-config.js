@@ -3,14 +3,16 @@ module.exports = {
     title: 'Stormtour'
   },
   plugins: [
+    'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
+        path: `${__dirname}/src/images`,
+        name: 'images',
       },
     },
-    'gatsby-plugin-typescript',
+    'gatsby-plugin-sharp',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
   ]
 }
